@@ -1,7 +1,0 @@
-.terraform/
-terraform.tfstate
-<<<<<<< HEAD
-terraform.tfstate.backup
-=======
-terraform.tfstate.backup
->>>>>>> 7b80965 (updated terraform files)
