@@ -50,7 +50,7 @@ resource "aws_instance" "my_instance" {
     security_groups = [aws_security_group.my_sg.name]
     ami = var.ec2_ami
     instance_type = var.ec2_instance_type
-    count = var.count
+    count = var.ec2_count
 
     root_block_device {
         volume_size = var.ec2_storage
