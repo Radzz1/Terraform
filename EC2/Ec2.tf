@@ -46,6 +46,7 @@ resource "aws_security_group" "my_sg" {
 
 # EC2 Instance
 resource "aws_instance" "my_instance" {
+    count = 4
     key_name = aws_key_pair.my_key.key_name
     security_groups = [aws_security_group.my_sg.name]
     ami = "ami-0a59248a6294cece2"
