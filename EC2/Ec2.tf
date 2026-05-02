@@ -50,7 +50,6 @@ resource "aws_instance" "my_instance" {
     security_groups = [aws_security_group.my_sg.name]
     ami = "ami-0a59248a6294cece2"
     instance_type = "t2.micro"
-    count = 3
 
     root_block_device {
         volume_size = 10
