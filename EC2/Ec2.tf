@@ -51,6 +51,7 @@ resource "aws_instance" "my_instance" {
     ami = var.ec2_ami
     instance_type = var.ec2_instance_type
     count = var.ec2_count
+    user_data = file("nginx.sh")
 
     root_block_device {
         volume_size = var.ec2_storage
