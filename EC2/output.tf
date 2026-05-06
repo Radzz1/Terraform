@@ -8,3 +8,15 @@ output "ec2-public-ip" {
         for instance in aws_instance.my_instance : instance.public_ip
     ]
 }
+
+output "ec2-private-ip" {
+    value = [
+        for instance in aws_instance.my_instance : instance.private_ip
+    ]
+}
+
+output "ec2-dns" {
+    value = [
+        for dns in aws_instance.my_instance : dns.public_dns
+    ]
+}
