@@ -21,9 +21,3 @@ variable "ec2_vol_type" {
     type = string
     description = "Volume type"
 }
-
-variable "ec2_count" {
-    default = 3
-    type = number
-    description = "Number of EC2 instances"
-}
