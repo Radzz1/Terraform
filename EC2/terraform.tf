@@ -10,7 +10,7 @@ terraform {
     bucket = "terra-bucket-test-db"
     key = "terraform.tfstate"
     region = "ap-southeast-2"
-    use_lockfile = true
+    dynamodb_table = "terraform-lock"
   }
 }
 
