@@ -21,3 +21,9 @@ variable "ec2_vol_type" {
     type = string
     description = "Volume type"
 }
+
+variable "env" {
+    default = "prd"
+    type = string
+    description = "Default Environment"
+}

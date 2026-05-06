@@ -48,7 +48,7 @@ resource "aws_security_group" "my_sg" {
 resource "aws_instance" "my_instance" {
     for_each = tomap({
         terra-micro = "t2.micro",
-        terra-medium = "t2.medium"
+        terra-micro11 = "t2.micro"
     })
     key_name = aws_key_pair.my_key.key_name
     security_groups = [aws_security_group.my_sg.name]
@@ -63,5 +63,6 @@ resource "aws_instance" "my_instance" {
 
     tags = {
       Name = each.key
+      Environment = var.env
     }
 }
