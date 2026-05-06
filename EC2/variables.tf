@@ -11,7 +11,7 @@ variable "ec2_ami" {
 }
 
 variable "ec2_storage" {
-    default = 15
+    default = 10
     type = number
     description = "Storage volume"
 }

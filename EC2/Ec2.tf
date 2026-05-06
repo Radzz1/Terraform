@@ -48,7 +48,8 @@ resource "aws_security_group" "my_sg" {
 resource "aws_instance" "my_instance" {
     for_each = tomap({
         terra-micro = "t2.micro",
-        terra-micro11 = "t2.micro"
+        terra-micro11 = "t2.micro",
+        terra-Arun = "t2.micro"
     })
     key_name = aws_key_pair.my_key.key_name
     security_groups = [aws_security_group.my_sg.name]
@@ -57,7 +58,7 @@ resource "aws_instance" "my_instance" {
     user_data = file("nginx.sh")
 
     root_block_device {
-        volume_size = var.ec2_storage
+        volume_size = var.env == "prd" ? var.ec2_storage : 15
         volume_type = var.ec2_vol_type
     }
 
