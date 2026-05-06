@@ -9,8 +9,8 @@ terraform {
   backend "s3" {
     bucket = "terra-bucket-test-db"
     key = "terraform.tfstate"
-    region = "ap-south-east-2"
-    dynamodb_table = "terraform-lock"
+    region = "ap-southeast-2"
+    use_lockfile = true
   }
 }
 
