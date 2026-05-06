@@ -1,4 +1,4 @@
-/*output "ec2_public_ip" {
+/*output "ec2_public_ip" {                   this output will not work if we use for_each
     value = aws_instance.my_instance[*].public_ip
     description = "Public IP of an instance"
 }*/

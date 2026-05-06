@@ -47,9 +47,7 @@ resource "aws_security_group" "my_sg" {
 # EC2 Instance
 resource "aws_instance" "my_instance" {
     for_each = tomap({
-        terra-micro = "t2.micro",
-        terra-micro11 = "t2.micro",
-        terra-Arun = "t2.micro"
+        terra-micro = "t2.micro"
     })
     key_name = aws_key_pair.my_key.key_name
     security_groups = [aws_security_group.my_sg.name]
@@ -66,4 +64,9 @@ resource "aws_instance" "my_instance" {
       Name = each.key
       Environment = var.env
     }
+}
+
+resource "aws_instance" "my_new_instance" {
+    ami = "unknown"
+    instance_type = "unknown"
 }
