@@ -11,7 +11,7 @@ resource "aws_default_vpc" "default" {
 
 #Security Group
 resource "aws_security_group" "my_sg" {
-    name = "terra-sg"
+    name = "${var.env}-terra-sg"
     description = "Creating through Terraform"
     vpc_id = aws_default_vpc.default.id
 
