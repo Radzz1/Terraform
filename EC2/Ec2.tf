@@ -50,7 +50,7 @@ resource "aws_instance" "my_instance" {
         terra-micro = "t2.micro",
         terra-small = "t2.small"
     })*/
-    instance_type = "var.ec2_instance_type"
+    instance_type = var.ec2_instance_type
     key_name = aws_key_pair.my_key.key_name
     security_groups = [aws_security_group.my_sg.name]
     ami = var.ec2_ami
