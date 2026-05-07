@@ -10,7 +10,7 @@
 terra-key
 
 # Variable files
-*.tfvars
+#*.tfvars
 
 # Crash logs
 crash.log
