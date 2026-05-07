@@ -1,29 +1,24 @@
 variable "ec2_instance_type"  {
-    default = "t2.micro"
     type = string
     description = "Type of EC2"
 }
 
 variable "ec2_ami" {
-    default = "ami-0a59248a6294cece2"
     type = string
     description = "AMI for EC2"
 }
 
 variable "ec2_storage" {
-    default = 10
     type = number
     description = "Storage volume"
 }
 
 variable "ec2_vol_type" {
-    default = "gp3"
     type = string
     description = "Volume type"
 }
 
 variable "env" {
-    default = "prd"
     type = string
     description = "Default Environment"
 }

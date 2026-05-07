@@ -40,20 +40,21 @@ resource "aws_security_group" "my_sg" {
         cidr_blocks = ["0.0.0.0/0"]
     }
     tags = {
-        Name = "terra-sg"
+        Name = "${var.env}-terraform-sg"
     }
 }
 
 # EC2 Instance
 resource "aws_instance" "my_instance" {
-    for_each = tomap({
+    /*for_each = tomap({
         terra-micro = "t2.micro",
         terra-small = "t2.small"
-    })
+    })*/
+    instance_type = "var.ec2_instance_type"
     key_name = aws_key_pair.my_key.key_name
     security_groups = [aws_security_group.my_sg.name]
     ami = var.ec2_ami
-    instance_type = each.value
+    //instance_type = each.value
     user_data = file("nginx.sh")
 
     root_block_device {
@@ -62,7 +63,7 @@ resource "aws_instance" "my_instance" {
     }
 
     tags = {
-      Name = each.key
+      //Name = each.key
       Environment = var.env
     }
 }
