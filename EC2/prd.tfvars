@@ -1,4 +1,4 @@
-ec2_instance_type = "t2-medium"
+ec2_instance_type = "t2.medium"
 ec2_ami = "ami-0a59248a6294cece2"
 ec2_storage = 10
 ec2_vol_type = "gp3"
